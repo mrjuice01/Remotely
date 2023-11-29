@@ -1,0 +1,54 @@
+﻿@inject NavigationManager NavManager
+ 
+<li class="nav-item">
+    <a class="nav-link @ActiveClass" data-toggle="tab" @onclick="SetActiveTab" style="cursor: pointer; user-select: none;">
+        @ChildContent
+    </a>
+</li>
+
+@code {
+    [CascadingParameter]
+    public TabControl Parent { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public Action OnActivated { get; set; }
+
+    [Parameter]
+    public string NavigationUri { get; set; }
+
+    [Parameter]
+    public string Name { get; set; }
+
+    private string ActiveClass => Parent.ActiveTab == Name ? "active" : "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await base.OnInitializedAsync();
+        if (Parent is null)
+        {
+            throw new Exception("TabHeader must be contained in a TabControl.");
+        }
+
+        if (!string.IsNullOrWhiteSpace(NavigationUri))
+        {
+            OnActivated?.Invoke();
+        }
+    }
+    
+    private void SetActiveTab()
+    {
+        if (!string.IsNullOrWhiteSpace(NavigationUri))
+        {
+            NavManager.NavigateTo(NavigationUri);
+        }
+        else
+        {
+            Parent.SetActiveTab(this);
+            StateHasChanged();
+            OnActivated?.Invoke();
+        }
+    }
+}

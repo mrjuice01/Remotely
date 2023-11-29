@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Copyright>Copyright ©  2021 Translucency Software</Copyright>
+    <Description>Background service that maintains a connection to the Remotely server.  The service is used for remote support and maintenance by this computer's administrators.</Description>
+    <Authors>Jared Goodwin</Authors>
+    <Product>Remotely Agent</Product>
+    <Company>Translucency Software</Company>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <PackageProjectUrl>https://remotely.one</PackageProjectUrl>
+    <Platforms>AnyCPU;x86;x64</Platforms>
+    <AssemblyName>Remotely_Agent</AssemblyName>
+    <RootNamespace>Remotely.Agent</RootNamespace>
+    <ApplicationIcon>Assets\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Protocols.MessagePack" Version="6.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.EventLog" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.6" />
+    <PackageReference Include="Microsoft.PowerShell.SDK" Version="7.2.5" />
+    <PackageReference Include="Microsoft.WSMan.Management" Version="7.2.5" />
+    <PackageReference Include="Microsoft.WSMan.Runtime" Version="7.2.5" />
+    <PackageReference Include="System.Management.Automation" Version="7.2.5" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
+
+
+</Project>

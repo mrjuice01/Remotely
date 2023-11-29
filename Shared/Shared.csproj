@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <AssemblyName>Remotely_Shared</AssemblyName>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <RootNamespace>Remotely.Shared</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ConcurrentList" Version="1.4.0" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.6" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Security.Principal.Windows" Version="5.0.0" />
+    <PackageReference Include="System.Text.Json" Version="6.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Models\ScriptResult.cs">
+      <LastGenOutput>ScriptResult.cs.d.ts</LastGenOutput>
+      <Generator>DtsGenerator</Generator>
+    </Compile>
+    <Compile Update="Models\CursorInfo.cs">
+      <Generator></Generator>
+    </Compile>
+    <Compile Update="Models\Device.cs">
+      <Generator></Generator>
+    </Compile>
+    <Compile Update="Models\RemotelyUserOptions.cs">
+      <LastGenOutput>RemotelyUserOptions.cs.d.ts</LastGenOutput>
+      <Generator>DtsGenerator</Generator>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Models\RemotelyUserOptions.cs.d.ts">
+      <DependentUpon>RemotelyUserOptions.cs</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </None>
+  </ItemGroup>
+
+</Project>
