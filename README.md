@@ -6,7 +6,7 @@ A remote control and remote scripting solution, built with .NET 6, Blazor, Signa
 
 
 # Status 
-## 2022-05-19
+## 2023-11-29
 Immense Networks is the proud new owner of Remotely. We intend to keep Remotely fully open-source.
 
 I (Mr Juice) had followed this project since the moment Jared shared it on r/msp years ago. While Jared was writing Remotely, we were writing our own tool for MSPs called ImmyBot, primarily focused on automation and software deployment. Jared and I had similar goals and he felt that we would be good custodians of the project. 
